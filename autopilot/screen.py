@@ -17,6 +17,14 @@ class ROI:
         """
         return image[self.x0 : self.x0 + self.x1, self.y0 : self.y0 + self.y1]
 
+    @property
+    def height(self):
+        return self.y1 - self.y0
+
+    @property
+    def width(self):
+        return self.x1 - self.x0
+
 
 class Window:
     def __init__(self):
