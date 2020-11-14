@@ -3,17 +3,17 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ROI:
+class Box:
     y0: int
     x0: int
     y1: int
     x1: int
 
-    def get_roi(self, image: np.ndarray) -> np.ndarray:
+    def get_box(self, image: np.ndarray) -> np.ndarray:
         """
-        Method which slice input image to operate only on selected by user part
+        Slices input image to operate only on box selected by user.
         :param image: Image readed and passed as np.ndarray
-        :return: Sliced image as np.ndarray
+        :return: Box of image as np.ndarray
         """
         return image[self.x0 : self.x0 + self.x1, self.y0 : self.y0 + self.y1]
 
